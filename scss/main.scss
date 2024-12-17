@@ -1,0 +1,507 @@
+@use './reset' as *;
+@use './colors' as colors;
+@use './animation.scss' as *;
+
+html {
+	scroll-padding-top: 63px;
+}
+body {
+	font-family: 'DM Sans', sans-serif;
+	background-color: colors.$background-color-odd;
+}
+
+.container {
+	max-width: 1300px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+button {
+	background-color: none;
+	border: none;
+}
+
+.underline {
+	width: 300px;
+	height: 2px;
+	margin: 0 auto;
+	background-color: colors.$green;
+}
+
+[data-aos] {
+    transform: translateZ(0);
+    opacity: 0;
+    transition: none;
+}
+.hero-shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+}
+
+.hero-img {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	z-index: 0;
+}
+
+.text-box {
+	p {
+		font-size: 26px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+// ############ NAV ############
+
+.nav {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	top: 0;
+	background-color: colors.$nav-color;
+	z-index: 10;
+
+	.logo-box {
+		margin-left: 25px;
+		padding: 15px;
+		font-size: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		p {
+			color: colors.$main-color;
+		}
+
+		span {
+			color: colors.$green;
+		}
+	}
+
+	.nav-link {
+		padding: 0 10px;
+		color: colors.$main-color;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		transition: 0.3s;
+	}
+
+	.nav-link:last-child {
+		margin-right: 25px;
+	}
+
+	.nav-link:hover {
+		color: colors.$green;
+	}
+
+	.hamburger-menu {
+		color: colors.$main-color;
+	}
+}
+
+// ############ HEADER ############
+
+.header {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	z-index: 0;
+
+	.hero-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-image: url('../img/hero1-img-mobile.jpg');
+
+		z-index: 1;
+	}
+
+	.hero-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		z-index: 10;
+
+		.hero-title {
+			padding: 0 20px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			text-shadow: 0 0 20px black;
+			color: colors.$main-color;
+			animation-duration: 1s;
+			z-index: 3;
+		}
+		
+		.subtitle {
+			padding: 20px;
+			color: colors.$main-color;
+			text-align: center;
+			animation-duration: 1s;
+			animation-delay: .5s;
+			z-index: 3;
+		}
+	}
+
+	.hero-shadow {
+		top: 0;
+		left: 0;
+		background-color: colors.$nav-color;
+		z-index: 2;
+	}
+
+	.fa-arrow-down {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		text-align: center;
+		color: colors.$green;
+		font-size: 32px;
+		cursor: pointer;
+		z-index: 2;
+	}
+}
+
+// ############### OPENING HOURS ###################
+
+.col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.opening-hours-section {
+	margin-top: 50px;
+	text-align: center;
+
+	.text-box {
+		p {
+			font-size: 26px;
+			text-transform: uppercase;
+		}
+	}
+
+	.day-box {
+		display: flex;
+		flex-direction: column;
+		margin: 10px 0;
+		width: 100%;
+		max-width: 350px;
+		border-radius: 10px;
+		background-color: colors.$white;
+
+		.day {
+			position: absolute;
+			margin: 15px 10px 10px 10px;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: black;
+		}
+
+		.opening-hours {
+			color: rgb(160, 160, 160);
+			font-size: 16px;
+			text-align: left;
+			margin: 0 0 10px 10px;
+		}
+
+		.div-opened {
+			justify-content: start;
+			align-self: flex-end;
+			padding: 5px 10px;
+			margin: 10px 10px 10px 0;
+			border-radius: 5px;
+			font-size: 20px;
+			background-color: colors.$green;
+			color: colors.$white;
+		}
+		.closed {
+			background-color: rgb(245, 69, 69);
+			margin-bottom: 44px;
+		}
+	}
+}
+
+// ############### SERVICES ###################
+
+.services {
+	background-image: url('../img/oferty-phone.jpg');
+	padding-bottom: 20px;
+
+	.text-box {
+		color: colors.$main-color;
+		padding: 20px 0;
+	}
+
+	.hero-shadow {
+		background-color: rgba(0, 0, 0, 0.562);
+	}
+
+	.service-icon {
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 100px;
+		background-color: colors.$background-color-odd;
+		border-radius: 50%;
+
+		i {
+			font-size: 42px;
+			color: colors.$nav-color;
+			padding: 20px;
+		}
+	}
+
+	.service-content {
+		margin: 10px 0;
+		height: 100%;
+		color: colors.$main-color;
+		z-index: 3;
+
+		.service-icon {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+// ############### OFERTA ###################
+.offer-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 15px;
+	background-color: colors.$white;
+	color: colors.$nav-color;
+	i {
+		color: colors.$green;
+	}
+
+	.offer-details {
+		margin-bottom: auto;
+	}
+
+	.btn-offer {
+		padding: 20px;
+		width: auto;
+		border-radius: 15px;
+		text-align: center;
+		text-transform: uppercase;
+		color: colors.$nav-color;
+		font-weight: bold;
+		transition: 0.3s background;
+		cursor: pointer;
+	}
+
+	.btn-offer:hover {
+		background-color: colors.$green;
+		color: colors.$white;
+	}
+}
+
+// ############### GALERIA ###################
+
+#main-carousel {
+	display: flex;
+	justify-content: center;
+}
+
+#main-carousel {
+	margin-bottom: 20px;
+
+	.splide__track {
+		height: 400px;
+		width: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.splide__slide {
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease-in-out;
+	}
+}
+
+#thumbnail-carousel {
+	display: flex;
+	justify-content: center;
+}
+
+.splide__slide {
+	opacity: 0.6;
+}
+
+.splide__slide.is-active {
+	opacity: 1;
+}
+
+// ############### KONTAKT ###################
+
+.contact {
+	bottom: 0;
+	margin-top: 50px;
+	background-color: colors.$nav-color-dark;
+	padding: 20px;
+	font-size: 16px;
+
+	.text-box {
+		color: colors.$background-color-odd;
+	}
+
+	.address {
+		padding: 0;
+
+		p {
+			padding: 5px 0;
+		}
+	}
+
+	.contact-box {
+		a,
+		p {
+			color: colors.$white;
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: colors.$green;
+		}
+
+		i {
+			padding: 0 5px;
+		}
+		height: 100%;
+		color: colors.$white;
+
+		.social-media {
+			height: 100%;
+			display: flex;
+
+			a {
+				margin: 0;
+				padding: 5px 0;
+			}
+		}
+	}
+}
+
+// ############### FOOTER ###################
+.footer {
+	padding: 5px 0;
+	font-size: 18px;
+	color: colors.$nav-color-dark;
+	background-color: colors.$background-color-odd;
+}
+
+// ############### MEDIA ###################
+@media (min-width: 768px) {
+	#main-carousel .splide__track {
+		width: 100%;
+		max-width: 950px;
+		height: 600px;
+	}
+
+	.header .hero-text {
+		.subtitle {
+			font-size: 22px;
+		}
+
+		.hero-title {
+			font-size: 38px;
+		}
+	}
+
+	.opening-hours-section {
+		.day-box {
+			.day {
+				font-size: 20px;
+			}
+
+			.opening-hours {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.nav {
+		background-color: colors.$nav-color-dark;
+		.links-box {
+			position: absolute;
+			max-height: 0;
+			overflow: hidden;
+			flex-direction: column;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			background-color: colors.$nav-color-dark;
+			text-align: center;
+			transition: max-height 0.3s ease-in-out;
+		}
+
+		.nav-box.active {
+			.links-box {
+				max-height: 500px;
+			}
+		}
+
+		.nav-link:last-child {
+			margin: 0;
+			padding-bottom: 40px;
+		}
+
+		.nav-link {
+			padding: 20px 0;
+			font-size: 20px;
+		}
+
+		.hamburger-menu {
+			display: block;
+			cursor: pointer;
+		}
+	}
+
+	.address {
+		padding-top: 0px;
+	}
+
+	.contact {
+		.address {
+			padding-bottom: 15px;
+		}
+	}
+
+	
+}
+
+@media (max-width: 480px) {
+	#main-carousel .splide__track {
+		width: 100%;
+		max-width: 280px;
+		height: 200px;
+	}
+
+	.splide__slide img {
+		object-fit: contain;
+	}
+}
